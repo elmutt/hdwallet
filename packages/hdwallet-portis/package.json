@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-portis",
-  "version": "1.9.4-testnet",
+  "version": "1.9.5-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
