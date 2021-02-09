@@ -6,7 +6,7 @@ import {
   BTCInputScriptType,
   Coin,
   HDWalletInfo,
-} from "@shapeshiftoss/hdwallet-core";
+} from "@elmutt/hdwallet-core";
 
 import { each } from "../utils";
 

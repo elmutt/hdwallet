@@ -1,5 +1,5 @@
-import { addressNListToBIP32 } from "@shapeshiftoss/hdwallet-core";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import { addressNListToBIP32 } from "@elmutt/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { BIP32Interface } from "bitcoinjs-lib";
 import * as bitcoin from "bitcoinjs-lib";
 import * as fio from "fiosdk-offline";

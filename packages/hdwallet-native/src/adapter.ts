@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { NativeHDWallet } from "./native";
 
 export type NativeAdapterArgs = {

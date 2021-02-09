@@ -1,7 +1,7 @@
-import { bip32ToAddressNList, HDWallet, FioWallet, supportsFio, FioEncryptionContentType } from "@shapeshiftoss/hdwallet-core";
+import { bip32ToAddressNList, HDWallet, FioWallet, supportsFio, FioEncryptionContentType } from "@elmutt/hdwallet-core";
 import { FioActionParameters, PublicAddress } from "fiosdk-offline";
 
-import { HDWalletInfo } from "@shapeshiftoss/hdwallet-core/src/wallet";
+import { HDWalletInfo } from "@elmutt/hdwallet-core/src/wallet";
 import * as tx01_unsigned from "./tx01.unsigned.json";
 import * as tx02_signed from "./tx02.signed.json";
 

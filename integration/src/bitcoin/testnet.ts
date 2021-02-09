@@ -8,9 +8,9 @@ import {
   BTCOutputScriptType,
   Coin,
   HDWalletInfo,
-} from "@shapeshiftoss/hdwallet-core";
-import { isLedger } from "@shapeshiftoss/hdwallet-ledger";
-import { isPortis } from "@shapeshiftoss/hdwallet-portis";
+} from "@elmutt/hdwallet-core";
+import { isLedger } from "@elmutt/hdwallet-ledger";
+import { isPortis } from "@elmutt/hdwallet-portis";
 
 import { each } from "../utils";
 

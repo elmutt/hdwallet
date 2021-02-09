@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { EventEmitter2 } from "eventemitter2";
 import { mnemonicToSeed, validateMnemonic } from "bip39";
 import { fromSeed } from "bip32";

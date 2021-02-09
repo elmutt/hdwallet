@@ -1,7 +1,7 @@
 /// <reference path="../node_modules/@types/chrome/index.d.ts" />
 
-import { Keyring } from "@shapeshiftoss/hdwallet-core";
-import { SEGMENT_SIZE, KeepKeyTransport } from "@shapeshiftoss/hdwallet-keepkey";
+import { Keyring } from "@elmutt/hdwallet-core";
+import { SEGMENT_SIZE, KeepKeyTransport } from "@elmutt/hdwallet-keepkey";
 import * as ByteBuffer from "bytebuffer";
 import { VENDOR_ID, WEBUSB_PRODUCT_ID, HID_PRODUCT_ID, makePromise } from "./utils";
 
