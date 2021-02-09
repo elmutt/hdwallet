@@ -1,6 +1,6 @@
 {
   "lerna": "3.22.1",
-  "version": "1.9.3-testnet",
+  "version": "1.9.4-testnet",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {

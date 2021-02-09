@@ -1,6 +1,6 @@
 {
-  "name": "@shapeshiftoss/hdwallet-portis",
-  "version": "1.9.3-testnet",
+  "name": "@elmutt/hdwallet-portis",
+  "version": "1.9.4-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

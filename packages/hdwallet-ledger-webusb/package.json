@@ -1,6 +1,6 @@
 {
-  "name": "@shapeshiftoss/hdwallet-ledger-webusb",
-  "version": "1.9.3-testnet",
+  "name": "@elmutt/hdwallet-ledger-webusb",
+  "version": "1.9.4-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -14,13 +14,13 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
+    "@elmutt/hdwallet-core": "^1.9.4-testnet",
+    "@elmutt/hdwallet-ledger": "^1.9.4-testnet",
     "@ledgerhq/hw-app-btc": "^4.73.4",
     "@ledgerhq/hw-app-eth": "^4.73.4",
     "@ledgerhq/hw-transport": "^4.73.4",
     "@ledgerhq/hw-transport-webusb": "^4.73.4",
     "@ledgerhq/live-common": "^8.4.1",
-    "@shapeshiftoss/hdwallet-core": "^1.9.3-testnet",
-    "@shapeshiftoss/hdwallet-ledger": "^1.9.3-testnet",
     "bytebuffer": "^5.0.1",
     "eventemitter2": "^5.0.1"
   }
