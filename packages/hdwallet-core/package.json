@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-core",
-  "version": "1.5.2",
+  "version": "1.9.7-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

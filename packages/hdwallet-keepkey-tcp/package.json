@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-keepkey-tcp",
-  "version": "1.5.2",
+  "version": "1.9.7-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -14,8 +14,8 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.5.2",
-    "@elmutt/hdwallet-keepkey": "^1.5.2",
+    "@elmutt/hdwallet-core": "^1.9.7-testnet",
+    "@elmutt/hdwallet-keepkey": "^1.9.7-testnet",
     "axios": "^0.18.0",
     "bytebuffer": "^5.0.1",
     "eventemitter2": "^5.0.1"
