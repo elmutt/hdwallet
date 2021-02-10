@@ -1,5 +1,5 @@
-import { Keyring } from "@shapeshiftoss/hdwallet-core";
-import { SEGMENT_SIZE, KeepKeyTransport } from "@shapeshiftoss/hdwallet-keepkey";
+import { Keyring } from "@elmutt/hdwallet-core";
+import { SEGMENT_SIZE, KeepKeyTransport } from "@elmutt/hdwallet-keepkey";
 import * as ByteBuffer from "bytebuffer";
 import { Device as NodeHIDDevice, HID } from "node-hid";
 import { VENDOR_ID, PRODUCT_ID } from "./utils";

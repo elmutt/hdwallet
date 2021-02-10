@@ -1,9 +1,9 @@
-import { HDWallet, HDWalletInfo } from "@shapeshiftoss/hdwallet-core";
-import { isKeepKey } from "@shapeshiftoss/hdwallet-keepkey";
-import { isTrezor } from "@shapeshiftoss/hdwallet-trezor";
-import { isLedger } from "@shapeshiftoss/hdwallet-ledger";
-import { isPortis } from "@shapeshiftoss/hdwallet-portis";
-import { isNative } from "@shapeshiftoss/hdwallet-native";
+import { HDWallet, HDWalletInfo } from "@elmutt/hdwallet-core";
+import { isKeepKey } from "@elmutt/hdwallet-keepkey";
+import { isTrezor } from "@elmutt/hdwallet-trezor";
+import { isLedger } from "@elmutt/hdwallet-ledger";
+import { isPortis } from "@elmutt/hdwallet-portis";
+import { isNative } from "@elmutt/hdwallet-native";
 
 import { btcTests } from "./bitcoin";
 import { ethTests } from "./ethereum";

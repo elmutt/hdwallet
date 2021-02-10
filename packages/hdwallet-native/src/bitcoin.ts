@@ -1,7 +1,7 @@
 import { ECPairInterface } from "bitcoinjs-lib";
 import * as bitcoin from "bitcoinjs-lib";
 import { toCashAddress, toLegacyAddress } from "bchaddrjs";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { getNetwork } from "./networks";
 import { NativeHDWalletBase } from "./native";
 

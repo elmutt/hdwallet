@@ -10,11 +10,11 @@ import {
   BTCWalletInfo,
   infoBTC,
   HDWalletInfo,
-} from "@shapeshiftoss/hdwallet-core";
-import { isLedger } from "@shapeshiftoss/hdwallet-ledger";
-import { isTrezor } from "@shapeshiftoss/hdwallet-trezor";
-import { isPortis } from "@shapeshiftoss/hdwallet-portis";
-import { isNative } from "@shapeshiftoss/hdwallet-native";
+} from "@elmutt/hdwallet-core";
+import { isLedger } from "@elmutt/hdwallet-ledger";
+import { isTrezor } from "@elmutt/hdwallet-trezor";
+import { isPortis } from "@elmutt/hdwallet-portis";
+import { isNative } from "@elmutt/hdwallet-native";
 
 import { each } from "../utils";
 

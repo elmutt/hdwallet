@@ -1,5 +1,5 @@
-import { create as createLedger } from "@shapeshiftoss/hdwallet-ledger";
-import { Events, Keyring, HDWallet } from "@shapeshiftoss/hdwallet-core";
+import { create as createLedger } from "@elmutt/hdwallet-ledger";
+import { Events, Keyring, HDWallet } from "@elmutt/hdwallet-core";
 import { LedgerWebUsbTransport, getFirstLedgerDevice, getTransport, openTransport } from "./transport";
 
 const VENDOR_ID = 11415;

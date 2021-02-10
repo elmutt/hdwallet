@@ -1,5 +1,5 @@
 {
-  "name": "@shapeshiftoss/hdwallet-portis",
+  "name": "@elmutt/hdwallet-portis",
   "version": "1.5.2",
   "license": "MIT",
   "publishConfig": {
