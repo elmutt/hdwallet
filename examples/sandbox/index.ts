@@ -41,6 +41,7 @@ import * as dashTxJson from "./json/dashTx.json";
 import * as dogeTxJson from "./json/dogeTx.json";
 import * as ltcTxJson from "./json/ltcTx.json";
 import * as rippleTxJson from "./json/rippleTx.json";
+import * as bnbTxJson from "./json/bnbTx.json";
 
 const keyring = new Keyring();
 
@@ -553,37 +554,12 @@ $binanceTx.on("click", async (e) => {
     return;
   }
   if (supportsBinance(wallet)) {
-    let unsigned = {
-      account_number: "34",
-      chain_id: "Binance-Chain-Nile",
-      data: "null",
-      memo: "test",
-      msgs: [
-        {
-          inputs: [
-            {
-              address: "tbnb1hgm0p7khfk85zpz5v0j8wnej3a90w709zzlffd",
-              coins: [{ amount: 1000000000, denom: "BNB" }],
-            },
-          ],
-          outputs: [
-            {
-              address: "tbnb1ss57e8sa7xnwq030k2ctr775uac9gjzglqhvpy",
-              coins: [{ amount: 1000000000, denom: "BNB" }],
-            },
-          ],
-        },
-      ],
-      sequence: "31",
-      source: "1",
-    };
-
     let res = await wallet.binanceSignTx({
       addressNList: bip32ToAddressNList(`m/44'/714'/0'/0/0`),
       chain_id: "Binance-Chain-Nile",
       account_number: "24250",
-      sequence: "31",
-      tx: unsigned,
+      sequence: 31,
+      tx: bnbTxJson,
     });
     $binanceResults.val(JSON.stringify(res));
   } else {
@@ -987,6 +963,228 @@ $ethVerify.on("click", async (e) => {
     let label = await wallet.getLabel();
     $ethResults.val(label + " does not support ETH");
   }
+});
+
+/*
+      ERC-20
+        * segwit: false
+        * mutltisig: false
+        * Bech32: false
+
+*/
+const $erc20DynamicContainer = $("#erc20DynamicContainer");
+
+const $erc20Addr = $("#erc20Addr");
+const $erc20Allowance = $("#erc20Allowance");
+const $erc20Approve = $("#erc20Approve");
+const $erc20BalanceOf = $("#erc20BalanceOf");
+const $erc20TotalSupply = $("#erc20TotalSupply");
+const $erc20Transfer = $("#erc20Transfer");
+const $erc20TransferFrom = $("#erc20TransferFrom");
+
+const $erc20Results = $("#erc20Results");
+const $erc20Submit = $("#erc20Submit");
+
+let erc20Selected: any;
+
+function erc20SetSetSelected(selectedButton: any) {
+  const erc20ButtonContentMap = [
+    {
+      button: $erc20Addr,
+      content: "",
+    },
+    {
+      button: $erc20Allowance,
+      content:
+        "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      <input type='text' placeholder='Owner Address' id='erc20OwnerAddress' />\
+      <input type='text' placeholder='Spender Address' id='erc20SpenderAddress' />\
+      ",
+    },
+    {
+      button: $erc20Approve,
+      content:
+        "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      <input type='text' placeholder='Spender Address' id='erc20SpenderAddress' />\
+      <input type='text' placeholder='Amount' id='erc20Amount' />\
+      ",
+    },
+    {
+      button: $erc20BalanceOf,
+      content:
+        "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      <input type='text' placeholder='Account Address' id='erc20AccountAddress' />\
+      ",
+    },
+    {
+      button: $erc20TotalSupply,
+      content: "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      ",
+    },
+    {
+      button: $erc20Transfer,
+      content:
+        "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      <input type='text' placeholder='Recipient Address' id='erc20RecipientAddress' />\
+      <input type='text' placeholder='Amount' id='erc20Amount' />\
+      ",
+    },
+    {
+      button: $erc20TransferFrom,
+      content:
+        "\
+      <input type='text' placeholder='Contract Address' id='erc20ContractAddress' />\
+      <input type='text' placeholder='Sender Address' id='erc20SenderAddress' />\
+      <input type='text' placeholder='Recipient Address' id='erc20RecipientAddress' />\
+      <input type='text' placeholder='Amount' id='erc20Amount' />\
+      ",
+    },
+  ];
+
+  erc20ButtonContentMap
+    .map((o) => o.button)
+    .forEach((button) => {
+      if (button == selectedButton) {
+        button.attr("class", "button");
+        $erc20DynamicContainer.empty();
+        $erc20DynamicContainer.append(erc20ButtonContentMap.filter((o) => o.button == button)[0].content);
+        erc20Selected = button;
+      } else {
+        button.attr("class", "button-outline");
+      }
+    });
+}
+
+$erc20Addr.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20Addr);
+});
+
+$erc20TotalSupply.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20TotalSupply);
+});
+
+$erc20BalanceOf.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20BalanceOf);
+});
+
+$erc20Allowance.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20Allowance);
+});
+
+$erc20Transfer.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20Transfer);
+});
+
+$erc20Approve.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20Approve);
+});
+
+$erc20TransferFrom.on("click", async (e) => {
+  e.preventDefault();
+  erc20SetSetSelected($erc20TransferFrom);
+});
+
+$erc20Submit.on("click", async (e) => {
+  if (!wallet) {
+    $erc20Results.val("No wallet?");
+    return;
+  }
+
+  let result: any;
+  let data: any;
+
+  if (supportsETH(wallet)) {
+    let { hardenedPath, relPath } = wallet.ethGetAccountPaths({
+      coin: "Ethereum",
+      accountIdx: 0,
+    })[0];
+
+    switch (erc20Selected) {
+      case $erc20Addr:
+        result = await wallet.ethGetAddress({
+          addressNList: hardenedPath.concat(relPath),
+          showDisplay: false,
+        });
+        result = await wallet.ethGetAddress({
+          addressNList: hardenedPath.concat(relPath),
+          showDisplay: true,
+          address: result,
+        });
+        break;
+      case $erc20Allowance:
+        data =
+          "0x" +
+          "dd62ed3e" + // ERC-20 contract allowance function identifier
+          $("#erc20OwnerAddress").val().replace("0x", "").padStart(64, "0") +
+          $("#erc20SpenderAddress").val().replace("0x", "").padStart(64, "0");
+
+        break;
+      case $erc20Approve:
+        data =
+          "0x" +
+          "095ea7b3" + // ERC-20 contract approve function identifier
+          $("#erc20SpenderAddress").val().replace("0x", "").padStart(64, "0") +
+          parseInt($("#erc20Amount").val(), 10).toString(16).padStart(64, "0");
+        break;
+      case $erc20BalanceOf:
+        data =
+          "0x" +
+          "70a08231" + // ERC-20 contract balanceOf function identifier
+          $("#erc20AccountAddress").val().replace("0x", "").padStart(64, "0");
+        break;
+      case $erc20TotalSupply:
+        data = "0x" + "18160ddd"; // ERC-20 contract totalSupply function identifier
+
+        break;
+      case $erc20Transfer:
+        data =
+          "0x" +
+          "a9059cbb" + // ERC-20 contract transfer function identifier
+          $("#erc20RecipientAddress").val().replace("0x", "").padStart(64, "0") +
+          parseInt($("#erc20Amount").val(), 10).toString(16).padStart(64, "0");
+        break;
+      case $erc20TransferFrom:
+        data =
+          "0x" +
+          "23b872dd" + // ERC-20 contract transferFrom function identifier
+          $("#erc20SenderAddress").val().replace("0x", "").padStart(64, "0") +
+          $("#erc20RecipientAddress").val().replace("0x", "").padStart(64, "0") +
+          parseInt($("#erc20Amount").val(), 10).toString(16).padStart(64, "0");
+        break;
+      default:
+        console.log("oops", erc20Selected);
+        return;
+    }
+    if (erc20Selected != $erc20Addr) {
+      result = await wallet.ethSignTx({
+        addressNList: hardenedPath.concat(relPath),
+        nonce: "0x0",
+        gasPrice: "0x5FB9ACA00",
+        gasLimit: "0x186A0",
+        value: "0x00",
+        to: $("#erc20ContractAddress").val(),
+        chainId: 1,
+        data: data,
+      });
+    }
+  } else {
+    const label = await wallet.getLabel();
+    $erc20Results.val(label + " does not support ETH");
+  }
+
+  console.log(result);
+  $erc20Results.val(JSON.stringify(result, null, 4));
 });
 
 /*

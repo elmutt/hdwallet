@@ -25,9 +25,10 @@ export function MixinNativeBinanceWalletInfo<TBase extends core.Constructor>(Bas
     }
 
     binanceGetAccountPaths(msg: core.BinanceGetAccountPaths): Array<core.BinanceAccountPath> {
+      const slip44 = core.slip44ByCoin("Binance")
       return [
         {
-          addressNList: [0x80000000 + 44, 0x80000000 + 117, 0x80000000 + msg.accountIdx, 0, 0],
+          addressNList: [0x80000000 + 44, 0x80000000 + slip44, 0x80000000 + msg.accountIdx, 0, 0],
         },
       ];
     }
@@ -87,11 +88,11 @@ export function MixinNativeBinanceWallet<TBase extends core.Constructor<NativeHD
           throw Error("Invalid permissions to sign for address")
         }
         const addressTo = msg.tx.msgs[0].outputs[0].address;
-        const amount = msg.tx.msgs[0].inputs[0].coins[0].amount;
+        const amount = (msg.tx.msgs[0].inputs[0].coins[0].amount).toString();
         const asset = "BNB";
         const memo = msg.tx.memo;
 
-        const result:any = await client.transfer(addressFrom, addressTo, amount, asset, memo, null);
+        const result: any = await client.transfer(addressFrom, addressTo, amount, asset, memo, null);
         const pub_key = result.signatures[0].pub_key.toString("base64");
         const signature = Buffer.from(result.signatures[0].signature, "base64").toString("base64");
 
