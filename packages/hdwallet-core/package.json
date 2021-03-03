@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "@elmutt/hdwallet-core",
   "version": "1.10.2-testnet",
+=======
+  "name": "@shapeshiftoss/hdwallet-core",
+  "version": "1.11.1",
+>>>>>>> upstream/master
   "license": "MIT",
   "publishConfig": {
     "access": "public"
