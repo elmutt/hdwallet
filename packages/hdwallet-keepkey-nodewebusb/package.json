@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-keepkey-nodewebusb",
-  "version": "1.10.2-testnet",
+  "version": "1.13.0-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
-    "@elmutt/hdwallet-core": "^1.10.2-testnet",
-    "@elmutt/hdwallet-keepkey": "^1.10.2-testnet",
+    "@elmutt/hdwallet-core": "^1.13.0-testnet",
+    "@elmutt/hdwallet-keepkey": "^1.13.0-testnet",
     "bytebuffer": "^5.0.1",
     "crypto": "^1.0.1",
     "eventemitter2": "^5.0.1"

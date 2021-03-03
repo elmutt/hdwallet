@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-trezor-connect",
-  "version": "1.11.1",
+  "version": "1.13.0-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@elmutt/hdwallet-core": "^1.11.1",
-    "@elmutt/hdwallet-trezor": "^1.11.1",
+    "@elmutt/hdwallet-trezor": "^1.13.0-testnet",
     "bytebuffer": "^5.0.1",
     "eventemitter2": "^5.0.1",
     "trezor-connect": "^7.0.2"
