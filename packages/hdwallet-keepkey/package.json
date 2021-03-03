@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@elmutt/hdwallet-core": "^1.13.0-testnet",
-    "@keepkey/device-protocol": "^6.4.1",
+    "@keepkey/device-protocol": "^7.0.0",
     "eip55": "^1.0.3",
     "ethereumjs-tx": "^1.3.7",
     "eventemitter2": "^5.0.1",
