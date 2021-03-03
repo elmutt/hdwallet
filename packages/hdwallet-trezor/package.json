@@ -15,7 +15,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.11.1",
+    "@elmutt/hdwallet-core": "^1.13.0-testnet",
     "ethereumjs-tx": "^1.3.7",
     "eventemitter2": "^5.0.1",
     "lodash": "^4.17.15"

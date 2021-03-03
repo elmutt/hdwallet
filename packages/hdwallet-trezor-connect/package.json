@@ -14,7 +14,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.11.1",
+    "@elmutt/hdwallet-core": "^1.13.0-testnet",
     "@elmutt/hdwallet-trezor": "^1.13.0-testnet",
     "bytebuffer": "^5.0.1",
     "eventemitter2": "^5.0.1",
