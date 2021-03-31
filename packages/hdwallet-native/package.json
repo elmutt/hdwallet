@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-native",
-  "version": "1.9.6-testnet",
+  "version": "2.0.0-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -14,7 +14,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.9.6-testnet",
+    "@elmutt/hdwallet-core": "^2.0.0-testnet",
     "bchaddrjs": "^0.4.9",
     "bip32": "^2.0.5",
     "bip39": "^3.0.2",
@@ -26,6 +26,7 @@
     "ethers": "^5.0.2",
     "fiosdk-offline": "^1.2.21",
     "lodash": "^4.17.15",
+    "secretjs-offline": "^0.11.2",
     "text-encoding": "^0.7.0"
   },
   "devDependencies": {

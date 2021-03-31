@@ -7,6 +7,6 @@ module.exports = {
   testEnvironment: "node",
   testMatch: ["<rootDir>/**/*.test.ts"],
   moduleNameMapper: {
-    "^@shapeshiftoss/(.*)": "<rootDir>/../../packages/$1/src",
+    "^@elmutt/(.*)": "<rootDir>/../../packages/$1/src",
   },
 };

@@ -1,4 +1,4 @@
-import { Keyring, HDWallet, Events, ActionCancelled } from "@shapeshiftoss/hdwallet-core";
+import { Keyring, HDWallet, Events, ActionCancelled } from "@elmutt/hdwallet-core";
 
 import { PortisHDWallet } from "./portis";
 import Portis from "@portis/web3";

@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-trezor",
-  "version": "1.9.6-testnet",
+  "version": "2.0.0-testnet",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -15,7 +15,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.9.6-testnet",
+    "@elmutt/hdwallet-core": "^2.0.0-testnet",
     "ethereumjs-tx": "^1.3.7",
     "eventemitter2": "^5.0.1",
     "lodash": "^4.17.15"

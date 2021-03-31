@@ -1,5 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
-import { BIP32Interface } from "bitcoinjs-lib";
+import * as core from "@elmutt/hdwallet-core";
 import txBuilder from "cosmos-tx-builder";
 import * as bitcoin from "bitcoinjs-lib";
 import { NativeHDWalletBase } from "./native";
@@ -8,7 +7,7 @@ import { toWords, encode } from "bech32";
 import CryptoJS, { RIPEMD160, SHA256 } from "crypto-js";
 import util from "./util";
 
-const ATOM_CHAIN = "cosmoshub-3";
+const ATOM_CHAIN = "cosmoshub-4";
 
 export function MixinNativeCosmosWalletInfo<TBase extends core.Constructor>(Base: TBase) {
   return class MixinNativeCosmosWalletInfo extends Base implements core.CosmosWalletInfo {
@@ -45,7 +44,7 @@ export function MixinNativeCosmosWallet<TBase extends core.Constructor<NativeHDW
   return class MixinNativeCosmosWallet extends Base {
     _supportsCosmos = true;
 
-    #wallet: BIP32Interface;
+    #wallet: bitcoin.BIP32Interface;
 
     async cosmosInitializeWallet(seed: Buffer): Promise<void> {
       const network = getNetwork("cosmos");

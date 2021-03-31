@@ -41,7 +41,7 @@ import {
   addressNListToBIP32,
   hardenedPath,
   relativePath,
-} from "@shapeshiftoss/hdwallet-core";
+} from "@elmutt/hdwallet-core";
 import { handleError } from "./utils";
 import * as Btc from "./bitcoin";
 import * as Eth from "./ethereum";
@@ -167,6 +167,11 @@ export class TrezorHDWalletInfo implements HDWalletInfo, BTCWalletInfo, ETHWalle
   _supportsRippleInfo: boolean = false;
   _supportsEosInfo: boolean = false;
   _supportsFioInfo: boolean = false;
+  _supportsThorchainInfo: boolean = false;
+  _supportsSecretInfo: boolean = false;
+  _supportsKavaInfo: boolean = false;
+  _supportsTerraInfo: boolean = false;
+
 
   public getVendor(): string {
     return "Trezor";
@@ -304,6 +309,14 @@ export class TrezorHDWallet implements HDWallet, BTCWallet, ETHWallet {
   _supportsEos: boolean = false;
   _supportsFioInfo: boolean = false;
   _supportsFio: boolean = false;
+  _supportsThorchainInfo: boolean = false;
+  _supportsThorchain: boolean = false;
+  _supportsSecretInfo: boolean = false;
+  _supportsSecret: boolean = false;
+  _supportsKava: boolean = false;
+  _supportsKavaInfo: boolean = true;
+  _supportsTerra: boolean = false;
+  _supportsTerraInfo: boolean = true;
 
   transport: TrezorTransport;
   featuresCache: any;

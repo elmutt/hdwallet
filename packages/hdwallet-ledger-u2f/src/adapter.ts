@@ -1,5 +1,5 @@
-import { create as createLedger } from "@shapeshiftoss/hdwallet-ledger";
-import { Events, Keyring, HDWallet } from "@shapeshiftoss/hdwallet-core";
+import { create as createLedger } from "@elmutt/hdwallet-ledger";
+import { Events, Keyring, HDWallet } from "@elmutt/hdwallet-core";
 import { LedgerU2FTransport } from "./transport";
 import TransportU2F from "@ledgerhq/hw-transport-u2f";
 

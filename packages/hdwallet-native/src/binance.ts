@@ -1,4 +1,4 @@
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { BIP32Interface } from "bitcoinjs-lib";
 import { BncClient } from "bnb-javascript-sdk-nobroadcast";
 import * as bitcoin from "bitcoinjs-lib";

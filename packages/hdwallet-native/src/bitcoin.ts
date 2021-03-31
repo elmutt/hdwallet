@@ -1,7 +1,7 @@
 import { ECPairInterface } from "bitcoinjs-lib";
 import * as bitcoin from "bitcoinjs-lib";
 import { toCashAddress, toLegacyAddress } from "bchaddrjs";
-import * as core from "@shapeshiftoss/hdwallet-core";
+import * as core from "@elmutt/hdwallet-core";
 import { getNetwork } from "./networks";
 import { NativeHDWalletBase } from "./native";
 
@@ -251,6 +251,12 @@ export function MixinNativeBTCWallet<TBase extends core.Constructor<NativeHDWall
             throw new Error(`failed to add output: ${e}`);
           }
         });
+
+        if(msg.opReturnData) {
+          const data = Buffer.from(msg.opReturnData, 'utf8')
+          const embed = bitcoin.payments.embed({data: [data]})
+          psbt.addOutput({ script: embed.output, value: 0 })  
+        }
 
         inputs.forEach((input, idx) => {
           try {
