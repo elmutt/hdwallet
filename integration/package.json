@@ -10,11 +10,11 @@
     "dev": "lerna run test --scope integration --parallel --include-filtered-dependencies"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "1.12.1",
-    "@elmutt/hdwallet-keepkey": "1.12.1",
-    "@elmutt/hdwallet-keepkey-nodewebusb": "1.12.1",
-    "@elmutt/hdwallet-keepkey-tcp": "1.12.1",
-    "@elmutt/hdwallet-trezor": "1.12.1",
+    "@elmutt/hdwallet-core": "3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey": "3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey-nodewebusb": "3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey-tcp": "3.0.0-testnet.0",
+    "@elmutt/hdwallet-trezor": "3.0.0-testnet.0",
     "debug": "^4.1.1",
     "parcel-bundler": "^1.12.4",
     "whatwg-fetch": "^2.0.4"
