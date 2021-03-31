@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet-keepkey-nodehid",
-  "version": "1.13.0-testnet",
+  "version": "3.0.0-testnet.0",
   "license": "MIT",
   "private": true,
   "main": "dist/index.js",
@@ -12,8 +12,8 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.13.0-testnet",
-    "@elmutt/hdwallet-keepkey": "^1.13.0-testnet",
+    "@elmutt/hdwallet-core": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey": "^3.0.0-testnet.0",
     "bytebuffer": "^5.0.1",
     "crypto": "^1.0.1",
     "eventemitter2": "^5.0.1"

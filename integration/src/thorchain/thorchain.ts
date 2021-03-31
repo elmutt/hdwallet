@@ -3,6 +3,7 @@ import * as core from "@elmutt/hdwallet-core";
 import tx_unsigned from "./tx01.testnet.thorchain.json";
 import tx_signed from "./tx01.testnet.thorchain.signed.json";
 
+
 const MNEMONIC12_NOPIN_NOPASSPHRASE = "alcohol woman abuse must during monitor noble actual mixed trade anger aisle";
 
 const TIMEOUT = 60 * 1000;
@@ -41,6 +42,20 @@ export function thorchainTests(get: () => { wallet: core.HDWallet; info: core.HD
     );
 
     test(
+      "describePath() thorchain",
+      async () => {
+        if (!wallet) return;
+        expect(
+          wallet.describePath({
+            path: core.bip32ToAddressNList("m/44'/931'/0'/0/0"),
+            coin: "Thorchain"
+          }),
+        );
+      },
+      TIMEOUT
+    );
+
+    test(
       "thorchainGetAddress()",
       async () => {
         if (!wallet) return;
@@ -48,6 +63,7 @@ export function thorchainTests(get: () => { wallet: core.HDWallet; info: core.HD
           await wallet.thorchainGetAddress({
             addressNList: core.bip32ToAddressNList("m/44'/931'/0'/0/0"),
             showDisplay: false,
+            testnet: true
           })
         ).toEqual("tthor1ls33ayg26kmltw7jjy55p32ghjna09zp6z69y8");
       },
@@ -67,7 +83,15 @@ export function thorchainTests(get: () => { wallet: core.HDWallet; info: core.HD
         };
 
         const res = await wallet.thorchainSignTx(input);
-        expect(res.signatures[0].signature).toEqual(tx_signed.value.signatures[0].signature);
+        switch(wallet.getVendor()){
+          case "KeepKey":
+            expect(res.signatures[0].signature).toEqual(tx_signed.tx.signatures[0].signature_keepkey);
+            break;
+          default:
+            expect(res.signatures[0].signature).toEqual(tx_signed.tx.signatures[0].signature);
+            break;
+
+        }
       },
       TIMEOUT
     );

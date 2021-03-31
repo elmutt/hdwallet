@@ -81,6 +81,7 @@ export interface BTCSignTxOutput {
    * Device must `btcSupportsNativeShapeShift()`
    */
   exchangeType?: ExchangeType;
+  opReturnData?: string;
 }
 
 export interface BTCSignTx {
@@ -101,6 +102,7 @@ export interface BTCSignedTx {
 
 export enum BTCInputScriptType {
   CashAddr = "cashaddr", // for Bitcoin Cash
+  Bech32 = 'bech32',
   SpendAddress = "p2pkh",
   SpendMultisig = "p2sh",
   External = "external",

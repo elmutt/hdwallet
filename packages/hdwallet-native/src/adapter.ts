@@ -1,5 +1,5 @@
 import * as core from "@elmutt/hdwallet-core";
-import { create, NativeHDWallet } from "./native";
+import { NativeHDWallet } from "./native";
 
 export type NativeAdapterArgs = {
   mnemonic?: string;

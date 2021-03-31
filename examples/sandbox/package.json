@@ -1,6 +1,6 @@
 {
   "name": "hdwallet-sandbox",
-  "version": "1.13.0-testnet",
+  "version": "3.0.0-testnet.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -10,20 +10,21 @@
     "clean": "rm -rf dist .cache"
   },
   "dependencies": {
-    "@elmutt/hdwallet-core": "^1.13.0-testnet",
-    "@elmutt/hdwallet-keepkey-tcp": "^1.13.0-testnet",
-    "@elmutt/hdwallet-keepkey-webusb": "^1.13.0-testnet",
-    "@elmutt/hdwallet-ledger": "^1.13.0-testnet",
-    "@elmutt/hdwallet-ledger-webusb": "^1.13.0-testnet",
-    "@elmutt/hdwallet-native": "^1.13.0-testnet",
-    "@elmutt/hdwallet-portis": "^1.13.0-testnet",
-    "@elmutt/hdwallet-trezor": "^1.13.0-testnet",
-    "@elmutt/hdwallet-trezor-connect": "^1.13.0-testnet",
+    "@elmutt/hdwallet-core": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey-tcp": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-keepkey-webusb": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-ledger": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-ledger-webusb": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-native": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-portis": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-trezor": "^3.0.0-testnet.0",
+    "@elmutt/hdwallet-trezor-connect": "^3.0.0-testnet.0",
     "bip32": "^2.0.4",
     "debug": "^4.1.1",
     "jquery": "^3.4.1",
     "json": "^9.0.6",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "web3": "^1.3.4"
   },
   "devDependencies": {
     "@types/debug": "^4.1.2"

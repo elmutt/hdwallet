@@ -1,6 +1,6 @@
 {
   "name": "@elmutt/hdwallet",
-  "version": "1.0.2",
+  "version": "3.0.0-testnet.0",
   "main": "index.js",
   "private": true,
   "repository": "https://github.com/shapeshift/hdwallet",
@@ -10,7 +10,7 @@
     "packages": [
       "packages/*",
       "examples/*",
-      "integration/*"
+      "integration"
     ],
     "nohoist": [
       "**/@types/w3c-web-usb",
@@ -21,7 +21,7 @@
     ]
   },
   "scripts": {
-    "pre-reqs": "npm install -g typescript prettier",
+    "pre-reqs": "npm install -g typescript prettier lerna",
     "clean": "lerna run clean --scope @elmutt/* && rm -rf coverage test-report node_modules && yarn cache clean",
     "lint:ts": "tsc --noEmit",
     "format": "prettier .",
